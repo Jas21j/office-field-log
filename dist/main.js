@@ -1,237 +1,174 @@
 const chapters = [...document.querySelectorAll('.chapter')];
 const chapterLinks = [...document.querySelectorAll('.chapter-nav a')];
-const dayLabels = chapters.map(({ dataset }) => dataset.days.split(';').map((entry) => {
-  const [threshold, text = threshold] = entry.split(',');
-  const [name, date] = text.split('|');
-  return { threshold: Number(threshold) || 0, name, date };
-}));
-const stage = document.querySelector('#stage-render');
-const poster = document.querySelector('#stage-poster');
-const stageLabel = document.querySelector('#stage-label');
-const stageDate = document.querySelector('#stage-date');
-const stageFocus = document.querySelector('#stage-focus');
-const stillToggle = document.querySelector('.still-toggle');
-const progressBar = document.querySelector('.stage-progress span');
+const copy = chapters.map(chapter => chapter.querySelector('.chapter-copy'));
+const overlay = document.querySelector('#story-copy');
+const stage = document.querySelector('.stage-wrap');
+const renderSurface = document.querySelector('#stage-render');
+const [base, blend] = renderSurface.querySelectorAll('.scene-frame');
+const focus = document.querySelector('#stage-focus');
+const bar = document.querySelector('.stage-progress span');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-const narrow = matchMedia('(max-width: 780px)');
-const stills = ['arrival', 'floor', 'trim', 'shelves', 'panels', 'closet-build', 'desk', 'closet-finish', 'finish'];
-const stillLabels = ['Arrival', 'First panel test-fit', 'Crown molding', 'Floating shelves', 'Panels and cabinet boxes',
-  'Closet counter and shelves', 'Workstation pedestals', 'Lit closet cabinetry', 'Window blinds'];
-const clamp = (n, min = 0, max = 1) => Math.max(min, Math.min(max, n));
-const smooth = (n) => {
-  const t = clamp(n);
-  return t * t * (3 - 2 * t);
-};
-let renderRoom;
-let stops = [];
-let progress = 0;
-let activeChapter = -1;
-let currentPoster = 'arrival';
-let scheduledFrame = 0;
-let stillMode = false;
+const clamp = value => Math.min(1, Math.max(0, value));
 
-function syncPoster(chapter, fraction) {
-  const index = chapter === 0 && fraction < .49 ? 0 : chapter + 1;
-  const id = stills[index];
-  if (id !== currentPoster) {
-    currentPoster = id;
-    poster.src = `assets/blender-${id}.webp`;
+const bounds = [];
+let active = -1;
+let requested = 0;
+let frames = [];
+let adjacent = 0;
+let ready = false;
+const decoded = new Map();
+
+for (const node of copy) {
+  node.hidden = true;
+  overlay.append(node);
+}
+document.querySelector('.chapters').classList.add('is-enhanced');
+
+function loadFrame(index) {
+  if (!frames[index] || decoded.has(index)) return;
+  const img = new Image();
+  const frame = frames[index];
+  decoded.set(index, { img, available: false });
+  img.src = frame.src;
+  img.decode().then(() => {
+    const entry = decoded.get(index);
+    if (!entry || entry.img !== img) return;
+    entry.available = true;
+    schedule();
+  }).catch(() => { /* Keep the current scene if this asset is unavailable. */ });
+}
+
+function render(value) {
+  if (!frames.length) return;
+  let current = frames.findLastIndex(frame => frame.at <= value);
+  if (current < 0) current = 0;
+  const next = Math.min(current + 1, frames.length - 1);
+  const a = frames[current];
+  const b = frames[next];
+  const sameShot = a.camera === b.camera;
+  const range = b.at - a.at;
+  const t = range > 0 ? clamp((value - a.at) / range) : 0;
+  const mix = sameShot && !reduced.matches ? t * t * (3 - 2 * t) : 0;
+  // Load the destination first so a chapter jump never has to wait on earlier scenes.
+  loadFrame(current);
+  loadFrame(next);
+  for (const offset of [-1, 2, 3]) loadFrame(current + offset);
+  if (adjacent !== current) {
+    for (const index of decoded.keys()) {
+      if (Math.abs(index - current) > 7) decoded.delete(index);
+    }
+    adjacent = current;
   }
-  stageFocus.textContent = stillLabels[index];
+  const first = decoded.get(current);
+  const second = decoded.get(next);
+  if (!first?.available) return;
+  if (base.getAttribute('src') !== a.src) {
+    base.src = a.src;
+    renderSurface.dataset.camera = a.camera;
+    renderSurface.style.setProperty('--wide-shot', `url("${a.src}")`);
+  }
+  if (mix > 0 && second?.available && blend.getAttribute('src') !== b.src) blend.src = b.src;
+  blend.style.opacity = second?.available ? mix : 0;
+  const displayed = mix > .7 && second?.available ? b : a;
+  const label = `Day ${String(displayed.day).padStart(2, '0')} · ${displayed.label}`;
+  if (label !== focus.textContent) focus.textContent = label;
 }
 
 function update() {
-  scheduledFrame = 0;
-  const top = scrollY;
-  let chapter = stops.findIndex(({ end }) => top < end);
-  if (chapter < 0) chapter = chapters.length - 1;
-  const { start, end } = stops[chapter];
-  const fraction = clamp((top - start) / (end - start));
-  progress = chapter + fraction;
-  progressBar.style.transform = `scaleX(${progress / chapters.length})`;
-  if (activeChapter !== chapter) {
-    chapterLinks[activeChapter]?.removeAttribute('aria-current');
+  requested = 0;
+  const y = scrollY;
+  let chapter = bounds.findIndex(({ end }) => y < end);
+  if (chapter === -1) chapter = bounds.length - 1;
+  if (active !== chapter) {
+    if (active >= 0) copy[active].hidden = true;
+    chapterLinks[active]?.removeAttribute('aria-current');
+    copy[chapter].hidden = false;
     chapterLinks[chapter].setAttribute('aria-current', 'step');
-    activeChapter = chapter;
+    active = chapter;
   }
-  const day = dayLabels[chapter].findLast(({ threshold }) => fraction >= threshold);
-  if (day.name !== stageLabel.textContent) stageLabel.textContent = day.name;
-  if (day.date !== stageDate.textContent) stageDate.textContent = day.date;
-  const live = Boolean(renderRoom && !reduced.matches && !stillMode);
-  stage.classList.toggle('ready', live);
-  stillToggle.hidden = !renderRoom || reduced.matches;
-  if (live) renderRoom(progress);
-  else syncPoster(chapter, fraction);
+  const { start, end } = bounds[chapter];
+  const value = chapter + clamp((y - start) / (end - start));
+  bar.style.transform = `scaleX(${value / chapters.length})`;
+  if (ready) render(value);
 }
 
-function scheduleUpdate() {
-  if (!scheduledFrame) scheduledFrame = requestAnimationFrame(update);
+function schedule() {
+  if (!requested) requested = requestAnimationFrame(update);
 }
 
 function measure() {
-  const offset = narrow.matches ? document.querySelector('.stage-wrap').getBoundingClientRect().height : innerHeight * .14;
-  stops = chapters.map((chapter) => {
-    const { top, height } = chapter.getBoundingClientRect();
-    const start = top + scrollY - offset;
-    return { start, end: start + height };
-  });
-  scheduleUpdate();
+  for (let index = 0; index < chapters.length; index += 1) {
+    const { top, height } = chapters[index].getBoundingClientRect();
+    bounds[index] = { start: top + scrollY, end: top + scrollY + height };
+  }
+  schedule();
 }
 
-addEventListener('scroll', scheduleUpdate, { passive: true });
+addEventListener('scroll', schedule, { passive: true });
 addEventListener('resize', measure, { passive: true });
 new ResizeObserver(measure).observe(document.querySelector('.chapters'));
-document.fonts.ready.then(measure);
+reduced.addEventListener('change', schedule);
 measure();
 
-stillToggle.addEventListener('click', () => {
-  stillMode = !stillMode;
-  stillToggle.setAttribute('aria-pressed', String(stillMode));
-  stillToggle.textContent = stillMode ? 'Live 3D view' : 'Blender still';
-  scheduleUpdate();
-});
-
-let started = false;
-async function startRoom() {
-  if (started || reduced.matches) return;
-  started = true;
-  let renderer;
+const sequenceObserver = new IntersectionObserver(async entries => {
+  if (!entries.some(entry => entry.isIntersecting)) return;
+  sequenceObserver.disconnect();
   try {
-    const [THREE, { GLTFLoader }, response] = await Promise.all([
-      import('./vendor/three.module.js'),
-      import('./vendor/GLTFLoader.js'),
-      fetch('assets/room-states.json'),
-    ]);
-    if (!response.ok) throw new Error('Room timeline unavailable');
-    const { objects, cameras } = await response.json();
-    const canvas = document.querySelector('#model');
-    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.6));
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.06;
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(56, 1, .025, 43);
-    const inches = ([x, y, z]) => new THREE.Vector3(x * .0254, z * .0254, -y * .0254);
-    const closetLights = [28, 69, 106].map((x) => {
-      const lamp = new THREE.PointLight(0xffcb89, 0, 1.7, 2);
-      lamp.position.copy(inches([x, -47, 68]));
-      scene.add(lamp);
-      return lamp;
-    });
-    scene.add(new THREE.HemisphereLight(0xfff8ee, 0xa99f8d, 2.10));
-    for (const [color, intensity, position] of [
-      [0xffe6cb, 2.30, [-4, 9, 5]],
-      [0xffffff, 1.10, [7, 8, 1]],
-      [0xd5e5fb, 1.15, [1, 7, -8]],
-    ]) {
-      const lamp = new THREE.DirectionalLight(color, intensity);
-      lamp.position.set(...position);
-      scene.add(lamp);
-    }
-    const { scene: room } = await new GLTFLoader().loadAsync('assets/office.glb');
-    scene.add(room);
-    const pieces = [];
-    room.traverse((node) => {
-      const key = node.userData.webId;
-      if (!key || !objects[key]) return;
-      const { section, visible, events } = objects[key];
-      pieces.push({ node, key, section, initiallyVisible: visible, events, origin: node.position.clone() });
-    });
-    if (!pieces.some(({ key }) => key === 'clo_counter')) throw new Error('Office model geometry unavailable');
-
-    // Slerp the view orientation between poses so opposite walls never swing the view through zero length.
-    const poses = cameras.map(([time, eye, target, fov, cut, label]) => {
-      const view = new THREE.PerspectiveCamera();
-      view.position.copy(inches(eye));
-      view.lookAt(inches(target));
-      return { time, xyz: view.position, rotation: view.quaternion, fov, cut, label };
-    });
-
-    function resizeRoom() {
-      const { clientWidth: width, clientHeight: height } = stage;
-      if (!width || !height) return;
-      camera.aspect = width / height;
-      renderer.setSize(width, height, false);
-      scheduleUpdate();
-    }
-
-    renderRoom = (value) => {
-      const bounds = stage.getBoundingClientRect();
-      if (bounds.bottom <= 0 || bounds.top >= innerHeight) return;
-      const index = poses.findLastIndex(({ time }) => time <= value);
-      const a = poses[Math.max(0, index)];
-      const b = poses[Math.min(poses.length - 1, index + 1)];
-      const blend = b === a ? 0 : smooth((value - a.time) / (b.time - a.time));
-      const shot = blend < .5 ? a : b;
-      if (stageFocus.textContent !== shot.label) stageFocus.textContent = shot.label;
-      const horizontal = a.fov + (b.fov - a.fov) * blend;
-      const vertical = 2 * Math.atan(Math.tan(horizontal * Math.PI / 360) / camera.aspect) * 180 / Math.PI;
-      camera.fov = clamp(vertical, 31, 100);
-      camera.updateProjectionMatrix();
-      camera.position.lerpVectors(a.xyz, b.xyz, blend);
-      camera.quaternion.slerpQuaternions(a.rotation, b.rotation, blend);
-
-      let lightsOn = false;
-      for (const { node, key, section, initiallyVisible, events, origin } of pieces) {
-        let visible = initiallyVisible;
-        let changed = -1;
-        for (const [time, action] of events) {
-          if (value < time) break;
-          if (action === 'show') {
-            visible = true;
-            changed = time;
-          } else if (action === 'hide') {
-            visible = false;
-          }
-        }
-        const openingCut = value < .16;
-        const cut = openingCut && (section === 'Wall S' || section === 'Ceiling' ||
-          ['Closet Ceiling', 'Closet Walls', 'Door Leaf', 'Door Hardware'].includes(key));
-        node.visible = visible && !cut;
-        if (!node.visible) continue;
-        node.position.copy(origin);
-        if (changed >= 0) {
-          const travel = 1 - smooth((value - changed) / .13);
-          if (/^(ramboard|desk_drawers|clo_doors)/.test(key)) node.position.z += travel * .26;
-          else if (!/^(clo_leds|blinds_new|fan)$/.test(key)) node.position.y += travel * .26;
-        }
-        if (key === 'clo_leds') lightsOn = true;
-      }
-      for (const light of closetLights) light.intensity = lightsOn ? 6.5 : 0;
-      renderer.render(scene, camera);
-    };
-    const observer = new ResizeObserver(resizeRoom);
-    observer.observe(stage);
-    resizeRoom();
-    canvas.addEventListener('webglcontextlost', (event) => {
-      event.preventDefault();
-      renderRoom = undefined;
-      scheduleUpdate();
-    });
-    canvas.addEventListener('webglcontextrestored', () => {
-      observer.disconnect();
-      renderer.dispose();
-      started = false;
-      startRoom();
-    }, { once: true });
-    scheduleUpdate();
+    const response = await fetch('assets/build/frames.json');
+    if (!response.ok) return;
+    frames = await response.json();
+    ready = true;
+    schedule();
   } catch {
-    renderer?.dispose();
-    scheduleUpdate();
+    // The opening Blender render remains visible if the sequence cannot load.
   }
+}, { rootMargin: '720px' });
+sequenceObserver.observe(stage);
+
+const hero = document.querySelector('.hero');
+const figure = hero.querySelector('.hero-visual');
+const movie = hero.querySelector('.hero-motion');
+const orbitControl = hero.querySelector('.orbit-control');
+let inView = true;
+let paused = false;
+
+function updateOrbitControl() {
+  const playing = !movie.paused;
+  orbitControl.innerHTML = playing ?
+    '<span aria-hidden="true">Ⅱ</span> Pause orbit' :
+    '<span aria-hidden="true">▷</span> Play orbit';
 }
 
-const roomObserver = new IntersectionObserver((entries) => {
-  if (!entries.some(({ isIntersecting }) => isIntersecting)) return;
-  startRoom();
-  roomObserver.disconnect();
-}, { rootMargin: '450px' });
-roomObserver.observe(document.querySelector('#build'));
-reduced.addEventListener('change', () => {
-  if (!reduced.matches) startRoom();
-  scheduleUpdate();
+function setOrbit() {
+  if (reduced.matches || paused || !inView || document.hidden) {
+    movie.pause();
+    return;
+  }
+  movie.muted = true;
+  if (!movie.src) movie.src = 'assets/hero-loop.mp4';
+  movie.play().catch(updateOrbitControl);
+}
+
+movie.addEventListener('loadeddata', () => { orbitControl.hidden = reduced.matches; });
+movie.addEventListener('playing', () => {
+  figure.classList.add('motion-ready');
+  updateOrbitControl();
 });
+movie.addEventListener('pause', updateOrbitControl);
+orbitControl.addEventListener('click', () => {
+  paused = !movie.paused;
+  setOrbit();
+});
+reduced.addEventListener('change', () => {
+  orbitControl.hidden = reduced.matches || movie.readyState < 2;
+  if (reduced.matches) figure.classList.remove('motion-ready');
+  setOrbit();
+});
+document.addEventListener('visibilitychange', setOrbit);
+new IntersectionObserver(([entry]) => {
+  inView = entry.isIntersecting;
+  setOrbit();
+}, { threshold: .22 }).observe(hero);
 
 const ledger = document.querySelector('#materials');
 const ledgerToggle = document.querySelector('#ledger-toggle');
@@ -242,7 +179,7 @@ function openLedger() {
 }
 ledgerToggle.addEventListener('click', openLedger);
 if (location.hash === '#materials') openLedger();
-ledger.addEventListener('click', (event) => {
+ledger.addEventListener('click', event => {
   if (event.target !== ledger) return;
   const bounds = ledger.getBoundingClientRect();
   if (event.clientX < bounds.left || event.clientX > bounds.right) ledger.close();

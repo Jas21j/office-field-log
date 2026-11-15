@@ -1,0 +1,32 @@
+{
+  "cameras": {
+    "arrival":    [[87, -95, 145], [72, 90, 45], 66, ["S", "Ceiling"], "The empty office"],
+    "floor":      [[104, 26, 71], [60, 110, 15], 66, [], "Floor protection"],
+    "test":       [[74, 64, 63], [1, 27, 50], 65, [], "The first slat panel"],
+    "trim":       [[72, 28, 68], [12, 90, 94], 63, [], "Crown molding"],
+    "baseboard":  [[75, 22, 30], [7, 100, 11], 62, [], "Baseboard touch-up"],
+    "shelf-west": [[94, 78, 63], [3, 117, 71], 65, [], "West wall shelf cut-ins"],
+    "shelf-east": [[49, 86, 64], [141, 125, 70], 68, [], "East floating shelves"],
+    "panels":     [[81, -12, 72], [72, 154, 53], 88, ["S"], "The side walls take their slats"],
+    "boxes":      [[115, 17, 65], [61, 112, 22], 75, [], "Loose cabinet boxes"],
+    "closet-in":  [[69, 67, 59], [69, -58, 43], 83, [], "Through the closet opening"],
+    "closet":     [[69, 3, 58], [69, -54, 43], 103, [], "Three cabinet runs and the U-shaped counter"],
+    "window":     [[70, 61, 61], [61, 160, 53], 72, [], "Slats around the window"],
+    "desk":       [[105, 54, 60], [5, 117, 36], 73, [], "Desk top, pedestals and knee space"],
+    "fan":        [[68, 26, 61], [69, 87, 96], 69, [], "Ceiling fan and light"],
+    "drawers":    [[80, 60, 45], [14, 111, 22], 62, [], "Drawer fronts and pulls"],
+    "lit-closet": [[67, 3, 57], [69, -55, 43], 101, [], "Cabinet doors below the lit shelves"],
+    "blinds":     [[65, 63, 58], [63, 160, 58], 66, [], "Inside-mounted window blinds"],
+    "complete":   [[72, 2, 65], [72, 126, 48], 100, ["S"], "The finished workstations"]
+  },
+  "frames": [
+    [0.00, 34, "arrival"], [0.15, 38, "arrival"], [0.20, 38, "floor"], [0.33, 40, "floor"], [0.52, 80, "floor"], [0.66, 87, "floor"], [0.77, 89, "test"], [0.96, 99, "test"],
+    [1.05, 113, "trim"], [1.38, 145, "trim"], [1.62, 168, "baseboard"], [1.93, 199, "baseboard"],
+    [2.02, 244, "shelf-west"], [2.21, 253, "shelf-west"], [2.38, 273, "shelf-east"], [2.55, 369, "shelf-west"], [2.70, 375, "shelf-east"], [2.86, 393, "shelf-east"], [2.98, 399, "shelf-east"],
+    [3.00, 470, "panels"], [3.12, 487, "panels"], [3.27, 495, "panels"], [3.48, 599, "panels"], [3.60, 680, "boxes"], [3.78, 697, "boxes"], [3.94, 699, "boxes"],
+    [4.00, 712, "closet-in"], [4.10, 725, "closet"], [4.18, 760, "closet", "bases"], [4.29, 760, "closet", "counter"], [4.40, 776, "closet", "shelves"], [4.54, 798, "closet", "partial-slats"], [4.69, 799, "closet"], [4.79, 839, "window"], [4.95, 899, "window"],
+    [5.00, 910, "desk"], [5.27, 950, "desk"], [5.42, 977, "fan"], [5.60, 995, "fan"], [5.87, 1099, "desk"],
+    [6.02, 1135, "drawers"], [6.15, 1180, "drawers", "drawers-moving"], [6.31, 1199, "drawers"], [6.43, 1199, "lit-closet"], [6.60, 1240, "lit-closet"], [6.73, 1273, "lit-closet", "doors-moving"], [6.91, 1299, "lit-closet"],
+    [7.01, 1326, "blinds"], [7.24, 1360, "blinds", "blinds-moving"], [7.40, 1399, "blinds"], [7.55, 1399, "complete"], [7.80, 1399, "complete"], [8.00, 1399, "complete"]
+  ]
+}

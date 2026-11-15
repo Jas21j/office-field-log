@@ -2,7 +2,12 @@
 
 Buildless project site. From this directory, run `python3 -m http.server 4173 --directory dist` and open `http://localhost:4173`.
 
-- `dist/index.html` holds the day-by-day text, materials drawer, and finished-room gallery.
-- `dist/main.js` links scrolling to camera moves and staged visibility in the GLB. Every chapter also has a Blender still. The site uses the stills by default with reduced motion or when WebGL is unavailable.
-- `tools/room_views.json` lists the camera stops and still frames. `tools/export_room.py` reads Office Twin v005 and its progress log from the parent project. From the parent folder, run Blender in background mode with `motion/3d/office_twin/Office-Twin_v005.blend`, select scene `OT | Dollhouse`, then pass `--python office-field-log/tools/export_room.py`. The script writes the GLB and timing metadata to `dist/assets/`. Add `-- --stills` for the Blender renders and convert the PNGs at `/tmp/office-v005-*.png` to the matching `hero.webp` and `blender-*.webp` assets. The export repairs the stretched fan blade geometry in memory using the twin's room specification. It never saves over the .blend.
-- The timeline and supplier amounts come from the twin log and existing film notes. The order of elements within a single dated milestone is illustrative. The finished-room photos are from interior frames of IMG_7530.
+The scroll track maps eight chapter stops to Blender renders at documented moments. Camera cuts take the viewer into the room and the walk-in closet. Within a shot, scrolling dissolves between adjacent geometry states. The landing uses a short, silent camera loop of the finished model. The fan blades rotate around their ceiling mount and the closet LEDs cast light on the slats. Visitors can pause the orbit. Reduced-motion settings disable autoplay and crossfades.
+
+## Refreshing the Blender footage
+
+1. From the parent workspace, run Blender in background mode with `motion/3d/office_twin/Office-Twin_v005.blend`. Select the scene `OT | Dollhouse` and pass `--python office-field-log/tools/render_cinematic.py -- all eevee`. Set `OFFICE_RENDER_DIR` to override the default render folder, `/tmp/office-cinematic`.
+2. Run `python3 office-field-log/tools/pack_cinematic.py /tmp/office-cinematic` from the parent workspace. This requires Pillow and FFmpeg. It writes WebP frames, the scroll track, and the landing video under `dist/assets/`.
+3. Edit the camera positions and the shot sequence in `tools/cinematic_shots.json`. The order of pieces turning on within a single documented milestone is illustrative. The renderer reads the source model without saving it.
+
+The materials drawer uses the room log and production notes for supplier amounts. The finished-room pictures are interior frames from IMG_7530.
