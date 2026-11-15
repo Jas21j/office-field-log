@@ -322,7 +322,8 @@ body:has(dialog[open]) { overflow: hidden; }
   .site-foot { padding-bottom: 58px; }
 }
 
-.chapters::after { content: ""; display: block; height: 54svh; }
+.chapters::after { content: ""; display: block; height: 90svh; }
+@media (max-width: 780px) { .chapters::after { height: 46svh; } }
 .ledger-close { position: sticky; top: 0; z-index: 1; pointer-events: none; }
 .ledger-close .close { pointer-events: auto; background: #f2efe7; box-shadow: 0 0 0 4px #f2efe7; }
 @media (min-width: 781px) {
