@@ -1,0 +1,32 @@
+{
+ "office-build": {
+  "accent": "#b88e76"
+ },
+ "ring-camera": {
+  "accent": "#b88e73"
+ },
+ "building-walkthrough": {
+  "accent": "#9bb881"
+ },
+ "shed-floor": {
+  "accent": "#b8a181"
+ },
+ "fish-relocation": {
+  "accent": "#819cb8"
+ },
+ "pond-cover": {
+  "accent": "#b8a458"
+ },
+ "roof-drain": {
+  "accent": "#b88366"
+ },
+ "garden": {
+  "accent": "#86b846"
+ },
+ "juniper-b": {
+  "accent": "#8fb7c9"
+ },
+ "juniper-c": {
+  "accent": "#c9a46a"
+ }
+}

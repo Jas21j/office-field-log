@@ -1,0 +1,411 @@
+{
+  "_about": "Image recipes for the Project Hub (dist/assets/hub/<id>/). Each output is a crop: fx/fy = crop centre (0-1 of the upright source frame), z = zoom (1 = largest crop of that shape). Video frames are read at time t (seconds), never with audio. Crops were chosen for privacy: no faces, no house fronts, no papers, no skyline. Re-check full-size output after any change.",
+  "roots": {
+    "work": "..",
+    "site": "dist/assets",
+    "clint": "~/Desktop/Clint/build/cache"
+  },
+  "sizes": {
+    "tile": [
+      480,
+      480,
+      80
+    ],
+    "hero-L": [
+      1920,
+      1080,
+      74
+    ],
+    "hero-P": [
+      900,
+      1600,
+      72
+    ],
+    "t": [
+      720,
+      450,
+      76
+    ]
+  },
+  "projects": {
+    "office-build": {
+      "tile": {
+        "img": "site/photo-workstations-1400.webp",
+        "fx": 0.5,
+        "fy": 0.52
+      },
+      "hero-L": {
+        "img": "site/build/52-L.webp",
+        "fx": 0.5,
+        "fy": 0.5
+      },
+      "hero-P": {
+        "img": "site/photo-workstations-1400.webp",
+        "fx": 0.5,
+        "fy": 0.5
+      },
+      "t": {
+        "d01": {
+          "img": "site/build/07-L.webp"
+        },
+        "d02": {
+          "img": "site/build/09-L.webp"
+        },
+        "d03": {
+          "img": "site/build/13-L.webp"
+        },
+        "d04": {
+          "img": "site/build/18-L.webp"
+        },
+        "d05": {
+          "img": "site/build/21-L.webp"
+        },
+        "d06": {
+          "img": "site/build/22-L.webp"
+        },
+        "d07": {
+          "img": "site/build/25-L.webp"
+        },
+        "d08": {
+          "img": "site/build/32-L.webp"
+        },
+        "d09": {
+          "img": "site/build/34-L.webp"
+        },
+        "d10": {
+          "img": "site/build/38-L.webp"
+        },
+        "d11": {
+          "img": "site/build/39-L.webp"
+        },
+        "d12": {
+          "img": "site/build/42-L.webp"
+        },
+        "d13": {
+          "img": "site/build/46-L.webp"
+        },
+        "d14": {
+          "img": "site/build/52-L.webp"
+        }
+      }
+    },
+    "ring-camera": {
+      "tile": {
+        "vid": "work/Ring N More/IMG_7654.MOV",
+        "t": 3.0,
+        "fx": 0.68,
+        "fy": 0.7,
+        "z": 2.0
+      },
+      "hero-L": {
+        "vid": "work/Ring N More/IMG_7663.MOV",
+        "t": 2.0,
+        "fx": 0.3,
+        "fy": 0.4,
+        "z": 1.45
+      },
+      "hero-P": {
+        "vid": "work/Ring N More/IMG_7654.MOV",
+        "t": 3.0,
+        "fx": 0.68,
+        "fy": 0.66,
+        "z": 1.9
+      },
+      "t": {
+        "arrive": {
+          "vid": "work/Ring N More/IMG_7654.MOV",
+          "t": 3.0,
+          "fx": 0.68,
+          "fy": 0.7,
+          "z": 2.2
+        },
+        "spot": {
+          "vid": "work/Ring N More/IMG_7662.MOV",
+          "t": 0.7,
+          "fx": 0.5,
+          "fy": 0.45,
+          "z": 1.2
+        },
+        "mount": {
+          "vid": "work/Ring N More/IMG_7663.MOV",
+          "t": 2.0,
+          "fx": 0.3,
+          "fy": 0.5,
+          "z": 1.5
+        }
+      }
+    },
+    "building-walkthrough": {
+      "tile": {
+        "img": "clint/preview-exterior.png",
+        "fx": 0.45,
+        "fy": 0.55,
+        "z": 1.25
+      },
+      "hero-L": {
+        "img": "clint/preview-exterior.png",
+        "fx": 0.5,
+        "fy": 0.52
+      },
+      "hero-P": {
+        "img": "clint/preview-exterior.png",
+        "fx": 0.62,
+        "fy": 0.5
+      },
+      "t": {
+        "ground": {
+          "img": "clint/preview-ground-open.png"
+        },
+        "first": {
+          "img": "clint/preview-first-open.png"
+        },
+        "exterior": {
+          "img": "clint/preview-exterior.png"
+        }
+      }
+    },
+    "shed-floor": {
+      "tile": {
+        "vid": "work/GTa Misson/IMG_7508.MOV",
+        "t": 7.5,
+        "fx": 0.38,
+        "fy": 0.62,
+        "z": 1.25
+      },
+      "hero-L": {
+        "vid": "work/GTa Misson/IMG_7508.MOV",
+        "t": 7.5,
+        "fx": 0.38,
+        "fy": 0.68,
+        "z": 1.5
+      },
+      "hero-P": {
+        "vid": "work/GTa Misson/IMG_7508.MOV",
+        "t": 7.5,
+        "fx": 0.35,
+        "fy": 0.62,
+        "z": 1.5
+      },
+      "t": {
+        "before": {
+          "vid": "work/IMG_6855.MOV",
+          "t": 1.0,
+          "fx": 0.62,
+          "fy": 0.6,
+          "z": 1.6
+        },
+        "opened": {
+          "vid": "work/GTa Misson/IMG_6921.MOV",
+          "t": 8.1,
+          "fx": 0.5,
+          "fy": 0.55,
+          "z": 1.1
+        },
+        "after": {
+          "vid": "work/GTa Misson/IMG_7508.MOV",
+          "t": 7.5,
+          "fx": 0.38,
+          "fy": 0.68,
+          "z": 1.5
+        }
+      }
+    },
+    "fish-relocation": {
+      "tile": {
+        "vid": "work/GTa Misson/IMG_6987.MOV",
+        "t": 1.6,
+        "fx": 0.6,
+        "fy": 0.5
+      },
+      "hero-L": {
+        "vid": "work/GTa Misson/IMG_6987.MOV",
+        "t": 1.6,
+        "fx": 0.5,
+        "fy": 0.5
+      },
+      "hero-P": {
+        "vid": "work/GTa Misson/IMG_6987.MOV",
+        "t": 1.6,
+        "fx": 0.6,
+        "fy": 0.5
+      },
+      "t": {
+        "net": {
+          "vid": "work/GTa Misson/IMG_6982.MOV",
+          "t": 0.0,
+          "fx": 0.5,
+          "fy": 0.6
+        },
+        "find": {
+          "vid": "work/GTa Misson/IMG_6985.MOV",
+          "t": 0.2,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        "caught": {
+          "vid": "work/GTa Misson/IMG_6987.MOV",
+          "t": 1.6,
+          "fx": 0.55,
+          "fy": 0.5
+        },
+        "bucket": {
+          "vid": "work/GTa Misson/IMG_6988.MOV",
+          "t": 10.0,
+          "fx": 0.55,
+          "fy": 0.33,
+          "z": 1.1
+        },
+        "lake": {
+          "vid": "work/GTa Misson/IMG_6993.MOV",
+          "t": 0.4,
+          "fx": 0.5,
+          "fy": 0.4,
+          "z": 1.15
+        }
+      }
+    },
+    "pond-cover": {
+      "tile": {
+        "vid": "work/GTa Misson/IMG_6978.MOV",
+        "t": 1.1,
+        "fx": 0.55,
+        "fy": 0.45,
+        "z": 1.3
+      },
+      "hero-L": {
+        "vid": "work/GTa Misson/IMG_6978.MOV",
+        "t": 1.1,
+        "fx": 0.55,
+        "fy": 0.42
+      },
+      "hero-P": {
+        "vid": "work/GTa Misson/IMG_6978.MOV",
+        "t": 1.1,
+        "fx": 0.55,
+        "fy": 0.48,
+        "z": 1.35
+      },
+      "t": {
+        "pond": {
+          "vid": "work/GTa Misson/IMG_6975.MOV",
+          "t": 0.2,
+          "fx": 0.5,
+          "fy": 0.45
+        },
+        "trace": {
+          "vid": "work/GTa Misson/IMG_6976.MOV",
+          "t": 0.0,
+          "fx": 0.5,
+          "fy": 0.35
+        },
+        "cut": {
+          "vid": "work/GTa Misson/IMG_6977.MOV",
+          "t": 0.1,
+          "fx": 0.5,
+          "fy": 0.35
+        },
+        "fit": {
+          "vid": "work/GTa Misson/IMG_6978.MOV",
+          "t": 1.1,
+          "fx": 0.5,
+          "fy": 0.45,
+          "z": 1.1
+        },
+        "on": {
+          "vid": "work/GTa Misson/IMG_6979.MOV",
+          "t": 0.2,
+          "fx": 0.48,
+          "fy": 0.45,
+          "z": 1.35
+        }
+      }
+    },
+    "roof-drain": {
+      "tile": {
+        "vid": "work/GTa Misson/IMG_6914.MOV",
+        "t": 0.2,
+        "fx": 0.35,
+        "fy": 0.3,
+        "z": 1.4
+      },
+      "hero-L": {
+        "vid": "work/GTa Misson/IMG_6914.MOV",
+        "t": 0.2,
+        "fx": 0.35,
+        "fy": 0.28,
+        "z": 1.3
+      },
+      "hero-P": {
+        "vid": "work/GTa Misson/IMG_6914.MOV",
+        "t": 0.2,
+        "fx": 0.38,
+        "fy": 0.38,
+        "z": 1.35
+      },
+      "t": {
+        "ready": {
+          "vid": "work/GTa Misson/IMG_6913.MOV",
+          "t": 0.0,
+          "fx": 0.5,
+          "fy": 0.5,
+          "z": 1.15
+        },
+        "roof": {
+          "vid": "work/GTa Misson/IMG_6914.MOV",
+          "t": 0.2,
+          "fx": 0.38,
+          "fy": 0.28,
+          "z": 1.3
+        },
+        "check": {
+          "vid": "work/GTa Misson/IMG_6916.MOV",
+          "t": 4.2,
+          "fx": 0.5,
+          "fy": 0.55,
+          "z": 1.1
+        }
+      }
+    },
+    "garden": {
+      "tile": {
+        "vid": "work/GTa Misson/IMG_6672.MOV",
+        "t": 0.4,
+        "fx": 0.6,
+        "fy": 0.42
+      },
+      "hero-L": {
+        "vid": "work/GTa Misson/IMG_6672.MOV",
+        "t": 0.4,
+        "fx": 0.5,
+        "fy": 0.42
+      },
+      "hero-P": {
+        "vid": "work/GTa Misson/IMG_6672.MOV",
+        "t": 0.4,
+        "fx": 0.55,
+        "fy": 0.45,
+        "z": 1.1
+      },
+      "t": {
+        "area": {
+          "vid": "work/GTa Misson/IMG_6671.MOV",
+          "t": 0.2,
+          "fx": 0.5,
+          "fy": 0.33
+        },
+        "weeds": {
+          "vid": "work/GTa Misson/IMG_6672.MOV",
+          "t": 0.4,
+          "fx": 0.5,
+          "fy": 0.42
+        },
+        "cleared": {
+          "vid": "work/GTa Misson/IMG_6675.MOV",
+          "t": 0.2,
+          "fx": 0.5,
+          "fy": 0.35
+        }
+      }
+    }
+  }
+}

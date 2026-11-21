@@ -1,0 +1,2521 @@
+{
+ "updated": "2026-11-20",
+ "featured": "juniper",
+ "foundations": [
+  {
+   "id": "home",
+   "name": "Home",
+   "desc": "Repairs, builds and installs in and on the house: carpentry, plumbing, drains, roofing, electrical and finish work."
+  },
+  {
+   "id": "outdoor",
+   "name": "Outdoor",
+   "desc": "Yards, gardens, ponds and the occasional wildlife call."
+  },
+  {
+   "id": "supply",
+   "name": "Supply runs",
+   "desc": "Purchases, pickups and fabrication stops, read straight from the receipts."
+  },
+  {
+   "id": "planning",
+   "name": "Planning & design",
+   "desc": "Measured plans, models and walkthroughs before the work starts."
+  }
+ ],
+ "projects": [
+  {
+   "id": "juniper",
+   "name": "Project Juniper",
+   "rank": 1,
+   "type": "Residential",
+   "city": "Davie, FL",
+   "statusLabel": "Invoice open · Oct 19 – Nov 19",
+   "summary": "The home office build (A), then a house repaint (B) and an apartment haul-out (C, paid on the day). Every day since the last payment is on the invoice below.",
+   "keyJob": "office-build",
+   "links": [
+    {
+     "label": "Watch the office build",
+     "href": "office.html"
+    }
+   ],
+   "ledger": {
+    "agreed": null,
+    "changes": [],
+    "payments": [
+     {
+      "date": "2026-10-18",
+      "amount": 911,
+      "note": "Last payment, covering work through Sunday, Oct 18"
+     },
+     {
+      "date": null,
+      "amount": 175,
+      "job": "juniper-c",
+      "note": "Juniper C, paid the same day"
+     }
+    ]
+   },
+   "jobs": [
+    {
+     "id": "office-build",
+     "title": "Home office build",
+     "foundation": "home",
+     "category": "Interior build-out",
+     "icon": "slats",
+     "start": "2026-10-13",
+     "end": "2026-11-10",
+     "status": "complete",
+     "statusLabel": "Last walkthrough Nov 10",
+     "summary": "Acoustic slat walls, four floating birch shelves on hidden steel braces, two built-in workstations, and a walk-in closet with wraparound cabinets, a counter and LED-lit shelving.",
+     "focus": "62% 50%",
+     "links": [
+      {
+       "label": "Watch the build",
+       "href": "office.html"
+      }
+     ],
+     "metrics": {
+      "daysOnSite": 14,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [
+       {
+        "date": "2026-10-19",
+        "vendor": "IMECA",
+        "item": "Three ¾″ birch plywood sheets and one ½″ sheet",
+        "amount": 244.5,
+        "basis": "Owner note",
+        "city": "Dania Beach"
+       },
+       {
+        "date": "2026-10-20",
+        "vendor": "Lioher",
+        "item": "Picked up cabinet panels",
+        "amount": 418.56,
+        "basis": "Owner note",
+        "city": "Miami Lakes"
+       },
+       {
+        "date": "2026-10-22",
+        "vendor": "LG Panels",
+        "item": "Picked up the cabinets, cash",
+        "amount": 796.88,
+        "basis": "Owner note",
+        "city": "Hialeah"
+       },
+       {
+        "date": "2026-10-22",
+        "vendor": "LG Hardware",
+        "item": "Picked up the laminate held from yesterday; bought the 4.5″ cabinet feet to cut down to 3″",
+        "amount": 58.96,
+        "basis": "Owner note"
+       },
+       {
+        "date": "2026-10-26",
+        "vendor": "The Home Depot",
+        "item": "Drywall screws and wall plates, cash",
+        "amount": 28.71,
+        "basis": "Owner note",
+        "city": "Miami Gardens"
+       },
+       {
+        "date": "2026-10-29",
+        "vendor": "City Plywood",
+        "item": "Six sheets of ¼″ white plywood, cash",
+        "amount": 288.9,
+        "basis": "Owner note",
+        "city": "Fort Lauderdale"
+       },
+       {
+        "date": "2026-10-30",
+        "vendor": "Eucucina",
+        "item": "Three drawer box systems and the wood lining",
+        "amount": 254.55,
+        "basis": "Owner note",
+        "city": "Doral"
+       },
+       {
+        "date": "2026-11-06",
+        "vendor": "LG Hardware",
+        "item": "Shelf pins and cabinet hinges",
+        "amount": 91.47,
+        "basis": "Owner note"
+       },
+       {
+        "date": "2026-11-09",
+        "vendor": "Lowe’s",
+        "item": "Black outlet covers and liquid nails",
+        "amount": 14.16,
+        "basis": "Owner note"
+       }
+      ],
+      "unpriced": [],
+      "stops": [
+       {
+        "date": "2026-10-19",
+        "place": "Calvin’s Custom Cabinetry",
+        "what": "Shelf fabrication and pickup."
+       },
+       {
+        "date": "2026-10-20",
+        "place": "LG Panels",
+        "what": "Cabinet stock dropped off for cutting."
+       },
+       {
+        "date": "2026-10-21",
+        "place": "IMECA",
+        "what": "Cabinet feet supply run."
+       },
+       {
+        "date": "2026-10-22",
+        "place": "LG Hardware",
+        "what": "Laminate and cabinet feet."
+       },
+       {
+        "date": "2026-10-28",
+        "place": "City Plywood and Operation 32",
+        "what": "Plywood and cabinet part runs, then back to LG Panels for adjustments."
+       },
+       {
+        "date": "2026-10-29",
+        "place": "The carpenter’s shop",
+        "what": "Drawer boxes built from the white plywood."
+       }
+      ]
+     },
+     "facts": [
+      {
+       "label": "Room",
+       "value": "11′11″ × 13′5″"
+      },
+      {
+       "label": "Slat length",
+       "value": "93″"
+      },
+      {
+       "label": "Floating shelves",
+       "value": "4"
+      },
+      {
+       "label": "Workstations",
+       "value": "2"
+      },
+      {
+       "label": "Build states logged",
+       "value": "53"
+      }
+     ],
+     "open": [],
+     "timeline": [
+      {
+       "date": "2026-10-13",
+       "time": "09:24",
+       "title": "Start with a bare room",
+       "note": "Floor protection goes down, slats are cut to 93 inches and the first panel is test-fitted. The first 56 wall panels come from MI.ELITE in Hialeah.",
+       "img": "t-d01",
+       "tag": "Day 01",
+       "tasks": [
+        {
+         "t": "Floor protection laid",
+         "f": "home",
+         "trade": "prep"
+        },
+        {
+         "t": "Slats cut to 93″",
+         "f": "home",
+         "trade": "carpentry"
+        },
+        {
+         "t": "First slat panel test-fitted",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-14",
+       "time": "16:42",
+       "title": "Set the edges",
+       "note": "Crown molding sets the ceiling line and the baseboards get touched up. The test panel comes down.",
+       "img": "t-d02",
+       "tag": "Day 02",
+       "tasks": [
+        {
+         "t": "Crown molding installed",
+         "f": "home",
+         "trade": "carpentry"
+        },
+        {
+         "t": "Baseboards touched up",
+         "f": "home",
+         "trade": "finish"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-16",
+       "title": "Shelves cut in",
+       "note": "The drywall is opened on both sides. Three steel braces per shelf fasten into studs and disappear inside the birch shelves.",
+       "img": "t-d03",
+       "tag": "Day 03",
+       "tasks": [
+        {
+         "t": "Drywall opened for the shelf braces",
+         "f": "home",
+         "trade": "prep"
+        },
+        {
+         "t": "Steel shelf braces fastened to studs",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-19",
+       "time": "18:06",
+       "title": "Four floating shelves",
+       "note": "The east shelves are up, bringing the room to four. Shelves fabricated and picked up at Calvin’s Custom Cabinetry.",
+       "img": "t-d04",
+       "tag": "Day 04",
+       "tasks": [
+        {
+         "t": "Floating shelves hung, four in all",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-20",
+       "title": "The panels go up",
+       "note": "Slats go up across the side walls. Cabinet stock is dropped off at LG Panels for cutting.",
+       "img": "t-d05",
+       "tag": "Day 05",
+       "tasks": [
+        {
+         "t": "Slats installed across the side walls",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-21",
+       "title": "Side walls slatted",
+       "note": "Slat work continues across the side walls, with a supply run to IMECA for cabinet feet.",
+       "img": "t-d06",
+       "tag": "Day 06",
+       "tasks": [
+        {
+         "t": "Side-wall slats continued",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-22",
+       "time": "18:27",
+       "title": "Cabinet boxes",
+       "note": "The floor protection comes off and the crew assembles the cabinet boxes.",
+       "img": "t-d07",
+       "tag": "Day 07",
+       "tasks": [
+        {
+         "t": "Floor protection removed",
+         "f": "home",
+         "trade": "prep"
+        },
+        {
+         "t": "Cabinet boxes assembled",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-27",
+       "title": "Inside the walk-in closet",
+       "note": "Base cabinets line three sides under a U-shaped counter, with open shelves above and a soffit over the top. Short slats are cut to fit between counter and soffit.",
+       "img": "t-d08",
+       "tag": "Day 08",
+       "tasks": [
+        {
+         "t": "Closet base cabinets set on three walls",
+         "f": "home",
+         "trade": "carpentry"
+        },
+        {
+         "t": "U-shaped closet counter fitted",
+         "f": "home",
+         "trade": "carpentry"
+        },
+        {
+         "t": "Wraparound closet shelves installed",
+         "f": "home",
+         "trade": "carpentry"
+        },
+        {
+         "t": "Short slats fitted between counter and soffit",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-28",
+       "title": "Around the window",
+       "note": "Bare areas of the window wall are filled in with slats.",
+       "img": "t-d09",
+       "tag": "Day 09",
+       "tasks": [
+        {
+         "t": "Window-wall slats filled in",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-29",
+       "title": "Fan and drawer boxes",
+       "note": "A ceiling fan replaces the old ceiling cap. Drawer boxes are built at the carpenter’s shop from the white plywood.",
+       "img": "t-d10",
+       "tag": "Day 10",
+       "tasks": [
+        {
+         "t": "Ceiling fan and light installed",
+         "f": "home",
+         "trade": "electrical"
+        },
+        {
+         "t": "Drawer boxes built at the carpenter’s shop",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-30",
+       "title": "Two workstations",
+       "note": "Each desktop bridges two cabinet pedestals, leaving knee space in the middle. Drawer systems and panels are picked up.",
+       "img": "t-d11",
+       "tag": "Day 11",
+       "tasks": [
+        {
+         "t": "Desktops set on cabinet pedestals",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-06",
+       "title": "Drawer fronts and pulls",
+       "note": "Drawer fronts and bar pulls finish the desks. Cabinet doors are picked up, paid ahead.",
+       "img": "t-d12",
+       "tag": "Day 12",
+       "tasks": [
+        {
+         "t": "Drawer fronts and bar pulls installed",
+         "f": "home",
+         "trade": "finish"
+        },
+        {
+         "t": "LED strips under the closet shelves",
+         "f": "home",
+         "trade": "electrical"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-09",
+       "time": "18:21",
+       "title": "Lit closet, fitted doors",
+       "note": "LED strips under the closet shelves wash light down the slats. The base cabinets get fitted doors and matching pulls.",
+       "img": "t-d13",
+       "tag": "Day 13",
+       "tasks": [
+        {
+         "t": "Closet cabinet doors and pulls fitted",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-10",
+       "title": "The last pieces",
+       "note": "The last slats go under the desk. White blinds slide into the window recess and the full room comes into view.",
+       "img": "t-d14",
+       "tag": "Day 14",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "Last slats fitted under the desk",
+         "f": "home",
+         "trade": "carpentry"
+        },
+        {
+         "t": "Inside-mounted blinds installed",
+         "f": "home",
+         "trade": "finish"
+        },
+        {
+         "t": "Final walkthrough",
+         "f": "home",
+         "trade": "finish"
+        }
+       ]
+      }
+     ],
+     "code": "A",
+     "short": "Office build"
+    },
+    {
+     "id": "juniper-b",
+     "code": "B",
+     "title": "House: floor tear-out and interior paint",
+     "foundation": "home",
+     "category": "Flooring removal and painting",
+     "icon": "roller",
+     "art": "assets/hub/juniper-b/art.svg",
+     "start": "2026-11-01",
+     "end": "2026-11-16",
+     "status": "complete",
+     "statusLabel": "Whole house painted Nov 16",
+     "summary": "A house a few minutes from the office. Vinyl flooring torn out of the living room, then three bedrooms, the staircase and the rest of the house painted.",
+     "metrics": {
+      "daysOnSite": 5,
+      "hours": null,
+      "miles": null,
+      "note": "Hours per day are in the invoice."
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": [
+       {
+        "date": "2026-11-06",
+        "place": "Home Depot",
+        "what": "A separate trip to look for flooring."
+       },
+       {
+        "date": "2026-11-08",
+        "place": "Box and Move",
+        "what": "Went for a 12-foot trailer; they were closed."
+       },
+       {
+        "date": "2026-11-15",
+        "place": "Walmart",
+        "what": "Grey and white paint to finish the job."
+       }
+      ]
+     },
+     "facts": [
+      [
+       "Where",
+       "A house near the office (location kept private)"
+      ],
+      [
+       "Part of",
+       "Project Juniper"
+      ]
+     ],
+     "objectives": [
+      "Remove the living room vinyl flooring",
+      "Paint three bedrooms and the staircase",
+      "Finish the whole house"
+     ],
+     "open": [],
+     "timeline": [
+      {
+       "date": "2026-11-01",
+       "time": "09:45",
+       "title": "Vinyl flooring out",
+       "note": "Ripped out the vinyl flooring in the living room, 9:45 AM to 12:30 PM.",
+       "tag": "Day 01",
+       "tasks": [
+        {
+         "t": "Living room vinyl flooring removed",
+         "f": "home",
+         "trade": "prep"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-11",
+       "time": "11:33",
+       "title": "Bedroom one of three",
+       "note": "Painted the first of three bedrooms.",
+       "tag": "Day 02",
+       "tasks": [
+        {
+         "t": "First bedroom painted",
+         "f": "home",
+         "trade": "finish"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-12",
+       "time": "12:40",
+       "title": "Bedroom two of three",
+       "note": "Finished painting the second bedroom.",
+       "tag": "Day 03",
+       "tasks": [
+        {
+         "t": "Second bedroom painted",
+         "f": "home",
+         "trade": "finish"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-13",
+       "time": "12:16",
+       "title": "Bedroom three and the staircase",
+       "note": "All three bedrooms and the staircase painted. Photo of the floor installation progress at 3:49 PM.",
+       "tag": "Day 04",
+       "tasks": [
+        {
+         "t": "Third bedroom painted",
+         "f": "home",
+         "trade": "finish"
+        },
+        {
+         "t": "Staircase painted",
+         "f": "home",
+         "trade": "finish"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-16",
+       "time": "09:16",
+       "title": "The whole house",
+       "note": "Finished painting the entire house at 5:16 PM.",
+       "tag": "Day 05",
+       "tasks": [
+        {
+         "t": "Rest of the house painted",
+         "f": "home",
+         "trade": "finish"
+        }
+       ]
+      }
+     ],
+     "short": "Floor & paint"
+    },
+    {
+     "id": "juniper-c",
+     "code": "C",
+     "title": "Apartment demo haul-out",
+     "foundation": "home",
+     "category": "Demolition waste removal",
+     "icon": "truck",
+     "art": "assets/hub/juniper-c/art.svg",
+     "start": null,
+     "end": null,
+     "status": "complete",
+     "statusLabel": "Paid the same day",
+     "summary": "Demolition waste from an apartment (drywall, a toilet and tiles) loaded out and taken to the dump, with a tile pickup on the way back.",
+     "metrics": {
+      "daysOnSite": 1,
+      "hours": null,
+      "miles": null,
+      "note": ""
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": [
+       {
+        "date": null,
+        "place": "Daniel Flooring Inc.",
+        "what": "Tile pickup on State Road 7."
+       }
+      ]
+     },
+     "facts": [
+      [
+       "Where",
+       "An apartment (location kept private)"
+      ],
+      [
+       "Paid",
+       "$175 the same day"
+      ]
+     ],
+     "objectives": [
+      "Remove the demolition waste",
+      "Haul it to the dump",
+      "Pick up tiles"
+     ],
+     "open": [],
+     "timeline": [
+      {
+       "date": null,
+       "time": "09:47",
+       "title": "Demo waste out",
+       "note": "Drywall, a toilet and tiles removed and hauled to the dump; tiles picked up from Daniel Flooring Inc.",
+       "tag": "Day 01",
+       "tasks": [
+        {
+         "t": "Demolition waste removed and hauled to the dump",
+         "f": "home",
+         "trade": "prep"
+        },
+        {
+         "t": "Tiles picked up",
+         "f": "supply"
+        }
+       ]
+      }
+     ],
+     "short": "Haul-out"
+    }
+   ],
+   "invoice": {
+    "title": "Statement",
+    "from": "2026-10-19",
+    "to": "2026-11-19",
+    "rates": {
+     "day": 150,
+     "gas": 35
+    },
+    "rule": "$150 for each day on site. Gas is charged on supply-run days, set day by day ($35 on most). Materials bought along the way are billed at the receipt amount.",
+    "lastPayment": {
+     "date": "2026-10-18",
+     "amount": 911
+    },
+    "materialsBilled": true,
+    "jobs": {
+     "A": "office-build",
+     "B": "juniper-b"
+    },
+    "days": [
+     {
+      "date": "2026-10-19",
+      "job": [
+       "A"
+      ],
+      "title": "Birch plywood run, shelves in",
+      "photo": "invoice/d1019",
+      "photoAt": "18:06",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "10:02",
+        "place": "IMECA",
+        "what": "Arrived",
+        "kind": "stop",
+        "city": "Dania Beach"
+       },
+       {
+        "t": "10:17",
+        "place": "IMECA",
+        "what": "Three ¾″ birch plywood sheets and one ½″ sheet",
+        "kind": "buy",
+        "city": "Dania Beach",
+        "amount": 244.5,
+        "receipt": "invoice/r1019",
+        "receiptFull": "invoice/f1019",
+        "mi": 0
+       },
+       {
+        "t": "10:26",
+        "place": "IMECA",
+        "what": "Loaded up and left",
+        "kind": "stop",
+        "city": "Dania Beach",
+        "mi": 0
+       },
+       {
+        "t": "11:26",
+        "place": "Calvin’s Custom Cabinetry",
+        "what": "Dropped off the planks, picked up the shelves",
+        "kind": "pickup",
+        "city": "Sunrise",
+        "mi": 14.7
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Cut the holes for the shelf braces with the multi-tool, ground the braces down and put in the shelves",
+        "kind": "site",
+        "mi": 9.1
+       },
+       {
+        "t": "18:06",
+        "place": "Office",
+        "what": "Cleaned up, took the final photos and left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 23.8,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-20",
+      "job": [
+       "A"
+      ],
+      "title": "Cabinet panels across Hialeah",
+      "photo": "invoice/d1020",
+      "photoAt": "18:20",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "09:30",
+        "place": "Home",
+        "what": "Left home",
+        "kind": "start"
+       },
+       {
+        "t": null,
+        "place": "Lioher",
+        "what": "Picked up cabinet panels",
+        "kind": "buy",
+        "city": "Miami Lakes",
+        "amount": 418.56,
+        "receipt": "invoice/r1020",
+        "receiptFull": "invoice/f1020",
+        "mi": 5.9
+       },
+       {
+        "t": "11:06",
+        "place": "LG Panels",
+        "what": "Dropped the panels off",
+        "kind": "drop",
+        "city": "West Hialeah",
+        "mi": 3.8
+       },
+       {
+        "t": "11:36",
+        "place": "Richelieu",
+        "what": "Stopped in",
+        "kind": "stop",
+        "city": "Hialeah",
+        "mi": 1.5
+       },
+       {
+        "t": "12:13",
+        "place": "NV5",
+        "what": "Arrived",
+        "kind": "stop",
+        "mi": 2.5
+       },
+       {
+        "t": "12:38",
+        "place": "NV5",
+        "what": "Received the documents for the condo citation",
+        "kind": "errand",
+        "mi": 0
+       },
+       {
+        "t": "13:00",
+        "place": "City of Hialeah",
+        "what": "Submitted the documents",
+        "kind": "errand",
+        "mi": 1.7
+       },
+       {
+        "t": "14:00",
+        "place": "Office",
+        "what": "Back on site",
+        "kind": "site",
+        "mi": 18.3
+       },
+       {
+        "t": "18:20",
+        "place": "Office",
+        "what": "Final photos, left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 33.7,
+      "milesPartial": false,
+      "note": "The condo citation paperwork has no charge of its own. The gas for the day covers the trip to pick it up and file it."
+     },
+     {
+      "date": "2026-10-21",
+      "job": [
+       "A"
+      ],
+      "title": "The cabinet-feet hunt",
+      "photo": "office-build/t-d06",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "10:15",
+        "place": "Home",
+        "what": "Left home",
+        "kind": "start"
+       },
+       {
+        "t": null,
+        "place": "LG Hardware",
+        "what": "Checked on the pending laminate order and looked for cabinet feet. None in stock",
+        "kind": "stop",
+        "mi": 9.4
+       },
+       {
+        "t": "12:26",
+        "place": "IMECA",
+        "what": "No cabinet feet",
+        "kind": "stop",
+        "city": "Hialeah",
+        "mi": 3.9
+       },
+       {
+        "t": "13:36",
+        "place": "DK Hardware Supply",
+        "what": "No cabinet feet",
+        "kind": "stop",
+        "city": "Hallandale Beach",
+        "mi": 16.8
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Back on site",
+        "kind": "site",
+        "mi": 9.6
+       },
+       {
+        "t": "17:00",
+        "place": "Office",
+        "what": "Left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 39.7,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-22",
+      "job": [
+       "A"
+      ],
+      "title": "Cabinets picked up, paid in cash",
+      "photo": "invoice/d1022",
+      "photoAt": "18:28",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "10:00",
+        "place": "Home",
+        "what": "Left home",
+        "kind": "start"
+       },
+       {
+        "t": "11:06",
+        "place": "LG Panels",
+        "what": "Picked up the cabinets",
+        "kind": "buy",
+        "city": "Hialeah",
+        "amount": 796.88,
+        "receipt": "invoice/r1022a",
+        "cash": true,
+        "receiptFull": "invoice/f1022a",
+        "mi": 9.4
+       },
+       {
+        "t": "11:51",
+        "place": "LG Hardware",
+        "what": "Picked up the laminate held from yesterday; bought the 4.5″ cabinet feet to cut down to 3″",
+        "kind": "buy",
+        "amount": 58.96,
+        "receipt": "invoice/r1022b",
+        "receiptFull": "invoice/f1022b",
+        "mi": 0.1
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Back on site",
+        "kind": "site",
+        "mi": 18.1
+       },
+       {
+        "t": "18:28",
+        "place": "Office",
+        "what": "Final photos",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 27.6,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-23",
+      "job": [
+       "A"
+      ],
+      "title": "A full day on site",
+      "photo": "invoice/d1023",
+      "photoAt": "18:12",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "08:13",
+        "place": "Home",
+        "what": "Left home",
+        "kind": "start"
+       },
+       {
+        "t": "08:47",
+        "place": "Office",
+        "what": "Arrived",
+        "kind": "site",
+        "mi": 8.7
+       },
+       {
+        "t": "18:12",
+        "place": "Office",
+        "what": "Final photos, left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 8.7,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-26",
+      "job": [
+       "A"
+      ],
+      "title": "Screws and wall plates, a late finish",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "12:00",
+        "place": "Office",
+        "what": "Arrived",
+        "kind": "site"
+       },
+       {
+        "t": "14:11",
+        "place": "The Home Depot",
+        "what": "Drywall screws and wall plates",
+        "kind": "buy",
+        "amount": 28.71,
+        "receipt": "invoice/r1026",
+        "cash": true,
+        "receiptFull": "invoice/f1026",
+        "city": "Miami Gardens",
+        "mi": 10.2
+       },
+       {
+        "t": "20:51",
+        "place": "Office",
+        "what": "Left",
+        "kind": "end",
+        "mi": 10.2
+       }
+      ],
+      "miles": 20.4,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-27",
+      "job": [
+       "A"
+      ],
+      "title": "Rode in, worked into the night",
+      "photo": "invoice/d1027",
+      "photoAt": "20:24",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "10:03",
+        "place": "Home",
+        "what": "Ride arrived",
+        "kind": "start"
+       },
+       {
+        "t": "10:34",
+        "place": "Office",
+        "what": "Dropped off at the office",
+        "kind": "site",
+        "mi": 8.7
+       },
+       {
+        "t": "20:24",
+        "place": "Office",
+        "what": "Left and sent the final photos",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "rode": true,
+      "miles": 0,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-28",
+      "job": [
+       "A"
+      ],
+      "title": "Plywood relay",
+      "photo": "invoice/d1028",
+      "photoAt": "18:45",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "11:17",
+        "place": "Home",
+        "what": "Left home",
+        "kind": "start"
+       },
+       {
+        "t": "11:36",
+        "place": "Hollywood",
+        "what": "Stop",
+        "kind": "stop",
+        "mi": 9.5
+       },
+       {
+        "t": "13:06",
+        "place": "City Plywood",
+        "what": "Picked up the plywood",
+        "kind": "pickup",
+        "city": "Fort Lauderdale",
+        "mi": 11.6
+       },
+       {
+        "t": "13:48",
+        "place": "Operation 32",
+        "what": "Dropped it off",
+        "kind": "drop",
+        "city": "Deerfield Beach",
+        "mi": 16.7
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Collected the wood panels",
+        "kind": "pickup",
+        "mi": 25.3
+       },
+       {
+        "t": "15:31",
+        "place": "LG Panels",
+        "what": "Dropped the panels off",
+        "kind": "drop",
+        "mi": 18.1
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Back on site",
+        "kind": "site",
+        "mi": 18.1
+       },
+       {
+        "t": "18:45",
+        "place": "Office",
+        "what": "Final photo",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 99.3,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-29",
+      "job": [
+       "A"
+      ],
+      "title": "White plywood to the carpenters",
+      "photo": "invoice/d1029",
+      "photoAt": "17:44",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "12:56",
+        "place": "Home",
+        "what": "Left home",
+        "kind": "start"
+       },
+       {
+        "t": "13:29",
+        "place": "City Plywood",
+        "what": "Six sheets of ¼″ white plywood",
+        "kind": "buy",
+        "city": "Fort Lauderdale",
+        "amount": 288.9,
+        "receipt": "invoice/r1029",
+        "cash": true,
+        "receiptFull": "invoice/f1029",
+        "mi": 17.6
+       },
+       {
+        "t": "14:01",
+        "place": "Operation 32",
+        "what": "Dropped off the sheets",
+        "kind": "drop",
+        "city": "Deerfield Beach",
+        "mi": 16.7
+       },
+       {
+        "t": "14:32",
+        "place": "Calvin’s Custom Cabinetry",
+        "what": "Dropped off the planks from Operation 32 to assemble the cabinets",
+        "kind": "drop",
+        "mi": 21.5
+       },
+       {
+        "t": "15:42",
+        "place": "Calvin’s Custom Cabinetry",
+        "what": "Left for the office",
+        "kind": "stop",
+        "mi": 0
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Cleaned up after the painter",
+        "kind": "site",
+        "mi": 9.1
+       },
+       {
+        "t": "17:44",
+        "place": "Office",
+        "what": "Final photo, left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 64.9,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-10-30",
+      "job": [
+       "A"
+      ],
+      "title": "Drawer box systems",
+      "photo": "office-build/t-d11",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "12:00",
+        "place": "Private seller",
+        "what": "Picked up drawer box systems",
+        "kind": "pickup",
+        "city": "Miami"
+       },
+       {
+        "t": "13:32",
+        "place": "Eucucina",
+        "what": "Three drawer box systems and the wood lining",
+        "kind": "buy",
+        "city": "Doral",
+        "amount": 254.55,
+        "receipt": "invoice/r1030",
+        "receiptFull": "invoice/f1030",
+        "mi": 8.0
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Back on site",
+        "kind": "site",
+        "mi": 24.6
+       },
+       {
+        "t": "18:47",
+        "place": "Office",
+        "what": "Left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 32.6,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-01",
+      "job": [
+       "B",
+       "A"
+      ],
+      "title": "Two sites: vinyl out, then the office",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "09:45",
+        "place": "Juniper B house",
+        "what": "Ripped out the vinyl flooring in the living room",
+        "kind": "site",
+        "job": "B"
+       },
+       {
+        "t": "12:30",
+        "place": "Juniper B house",
+        "what": "Left",
+        "kind": "stop",
+        "job": "B",
+        "mi": 0
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Back at the office",
+        "kind": "site",
+        "job": "A",
+        "mi": 2.4
+       },
+       {
+        "t": "16:50",
+        "place": "Office",
+        "what": "Left",
+        "kind": "end",
+        "job": "A",
+        "mi": 0
+       }
+      ],
+      "miles": 2.4,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-06",
+      "job": [
+       "A",
+       "B"
+      ],
+      "title": "Flooring search for B, hinges and shelf pins for A",
+      "photo": "office-build/t-d12",
+      "dayRate": true,
+      "gas": true,
+      "stops": [
+       {
+        "t": "09:32",
+        "place": "Home",
+        "what": "Left home",
+        "kind": "start"
+       },
+       {
+        "t": "10:15",
+        "place": "Home Depot",
+        "what": "A separate trip to look for flooring for Juniper B",
+        "kind": "stop",
+        "mi": 10.5,
+        "job": "B"
+       },
+       {
+        "t": "15:18",
+        "place": "LG Hardware",
+        "what": "Shelf pins and cabinet hinges",
+        "kind": "buy",
+        "amount": 91.47,
+        "receipt": "invoice/r1106",
+        "receiptFull": "invoice/f1106",
+        "mi": 19.7,
+        "job": "A"
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Back on site",
+        "kind": "site",
+        "mi": 18.1,
+        "job": "A"
+       },
+       {
+        "t": "17:00",
+        "place": "Office",
+        "what": "Left",
+        "kind": "end",
+        "mi": 0,
+        "job": "A"
+       }
+      ],
+      "miles": 48.3,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-08",
+      "job": [
+       "B"
+      ],
+      "title": "Trailer run for Juniper B, closed",
+      "dayRate": false,
+      "gas": 10,
+      "stops": [
+       {
+        "t": "11:44",
+        "place": "Box and Move",
+        "what": "Went for a 12-foot trailer. They were closed",
+        "kind": "errand",
+        "city": "Hollywood"
+       }
+      ],
+      "miles": null,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-09",
+      "job": [
+       "A"
+      ],
+      "title": "Outlet covers and liquid nails",
+      "photo": "office-build/t-d13",
+      "photoAt": "18:21",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "10:13",
+        "place": "Office",
+        "what": "Arrived",
+        "kind": "site"
+       },
+       {
+        "t": "15:35",
+        "place": "Lowe’s",
+        "what": "Black outlet covers and liquid nails",
+        "kind": "buy",
+        "amount": 14.16,
+        "receipt": "invoice/r1109",
+        "receiptFull": "invoice/f1109",
+        "mi": 1.4
+       },
+       {
+        "t": null,
+        "place": "Office",
+        "what": "Back on site",
+        "kind": "site",
+        "mi": 1.4
+       },
+       {
+        "t": "18:21",
+        "place": "Office",
+        "what": "Final photos, left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 2.8,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-10",
+      "job": [
+       "A"
+      ],
+      "title": "An afternoon on site",
+      "photo": "office-build/t-d14",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "12:36",
+        "place": "Office",
+        "what": "Arrived",
+        "kind": "site"
+       },
+       {
+        "t": "16:35",
+        "place": "Office",
+        "what": "Left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 0.0,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-11",
+      "job": [
+       "B"
+      ],
+      "title": "Bedroom one of three",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "11:33",
+        "place": "Juniper B house",
+        "what": "Arrived; painted the first of three bedrooms",
+        "kind": "site"
+       },
+       {
+        "t": "16:20",
+        "place": "Juniper B house",
+        "what": "Left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 0.0,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-12",
+      "job": [
+       "B"
+      ],
+      "title": "Bedroom two of three",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "12:40",
+        "place": "Juniper B house",
+        "what": "Arrived; finished painting the second bedroom",
+        "kind": "site"
+       },
+       {
+        "t": "17:48",
+        "place": "Juniper B house",
+        "what": "Left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 0.0,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-13",
+      "job": [
+       "B"
+      ],
+      "title": "Bedroom three and the staircase",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "12:16",
+        "place": "Juniper B house",
+        "what": "Arrived; painted the third bedroom and the staircase",
+        "kind": "site"
+       },
+       {
+        "t": "15:49",
+        "place": "Juniper B house",
+        "what": "Photo of the floor installation progress, left",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 0.0,
+      "milesPartial": false
+     },
+     {
+      "date": "2026-11-16",
+      "job": [
+       "B"
+      ],
+      "title": "The whole house, painted",
+      "dayRate": true,
+      "gas": false,
+      "stops": [
+       {
+        "t": "09:16",
+        "place": "Juniper B house",
+        "what": "Arrived to finish the painting",
+        "kind": "site"
+       },
+       {
+        "t": "17:16",
+        "place": "Juniper B house",
+        "what": "Finished the entire house",
+        "kind": "end",
+        "mi": 0
+       }
+      ],
+      "miles": 0.0,
+      "milesPartial": false
+     }
+    ],
+    "milesBasis": "Estimated from each stop’s town: straight-line distance × 1.3 for roads. Counts the legs between recorded stops; the drive home at night is not included."
+   }
+  },
+  {
+   "id": "sinclair",
+   "name": "Project Sinclair",
+   "rank": 2,
+   "type": "Residential",
+   "summary": "Seven jobs at one residential property, filmed as the Odd Jobs series: a roof drain line, a shed floor, a pond cover, a fish relocation, garden clearing, a roof coating and a Ring doorbell install.",
+   "keyJob": "roof-drain",
+   "ledger": {
+    "agreed": null,
+    "changes": [],
+    "payments": []
+   },
+   "jobs": [
+    {
+     "id": "ring-camera",
+     "title": "Ring camera install",
+     "foundation": "home",
+     "category": "Smart home install",
+     "icon": "camera",
+     "start": "2026-11-19",
+     "end": "2026-11-19",
+     "status": "complete",
+     "statusLabel": "Complete · Nov 19",
+     "summary": "A Ring video doorbell is set up, connected to the home Wi-Fi and mounted at the entry. Completion was called on camera the same afternoon.",
+     "focus": "38% 45%",
+     "metrics": {
+      "daysOnSite": 1,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "On camera",
+       "value": "1:15–2:45 PM"
+      },
+      {
+       "label": "Clips logged",
+       "value": "11"
+      },
+      {
+       "label": "Equipment seen",
+       "value": "Cordless drill"
+      }
+     ],
+     "objectives": [
+      "Set up the doorbell",
+      "Find the Wi-Fi password",
+      "Check the connection",
+      "Mount and connect"
+     ],
+     "open": [
+      "Doorbell model not specified",
+      "Wiring details not specified"
+     ],
+     "timeline": [
+      {
+       "date": "2026-11-19",
+       "time": "13:15",
+       "title": "The doorbell arrives",
+       "note": "The new Ring doorbell, still boxed, at the job.",
+       "img": "t-arrive"
+      },
+      {
+       "date": "2026-11-19",
+       "time": "13:36",
+       "title": "Wi-Fi password hunt",
+       "note": "Setup waits on the network password.",
+       "tasks": [
+        {
+         "t": "Wi-Fi password found for setup",
+         "f": "home",
+         "trade": "electrical"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-19",
+       "time": "13:46",
+       "title": "Connected",
+       "note": "The doorbell connects and the setup check runs.",
+       "tasks": [
+        {
+         "t": "Doorbell connected to Wi-Fi",
+         "f": "home",
+         "trade": "electrical"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-19",
+       "time": "14:10",
+       "title": "The doorbell spot",
+       "note": "Where the new doorbell goes, beside the entry.",
+       "img": "t-spot"
+      },
+      {
+       "date": "2026-11-19",
+       "time": "14:42",
+       "title": "Mount and connect",
+       "note": "The doorbell is mounted to the wall and connected.",
+       "img": "t-mount",
+       "tasks": [
+        {
+         "t": "Doorbell mounted and connected",
+         "f": "home",
+         "trade": "electrical"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-19",
+       "time": "14:45",
+       "title": "Installed",
+       "note": "Installation complete, called on camera.",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "Install signed off on camera",
+         "f": "home",
+         "trade": "finish"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "shed-floor",
+     "title": "Shed floor replacement",
+     "foundation": "home",
+     "category": "Carpentry",
+     "icon": "boards",
+     "start": "2026-10-12",
+     "end": "2026-11-07",
+     "status": "complete",
+     "statusLabel": "Complete · Nov 7",
+     "summary": "A former chicken coop, now used as a storage shed, gets a new timber floor in place of the old coop floor.",
+     "focus": "40% 60%",
+     "metrics": {
+      "daysOnSite": null,
+      "hours": null,
+      "miles": null,
+      "note": "Filmed on 3 days; days on site not recorded"
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "Days filmed",
+       "value": "3"
+      },
+      {
+       "label": "Clips logged",
+       "value": "4"
+      }
+     ],
+     "objectives": [
+      "Show the old floor",
+      "Build the new floor",
+      "Show the result"
+     ],
+     "open": [
+      "Floor size and materials not recorded"
+     ],
+     "timeline": [
+      {
+       "date": "2026-10-12",
+       "time": "13:57",
+       "title": "Before",
+       "note": "The ground and old floor area before the work.",
+       "img": "t-before"
+      },
+      {
+       "date": "2026-10-15",
+       "time": "09:25",
+       "title": "Old floor opened up",
+       "note": "The converted coop’s old floor, with its wire base showing.",
+       "img": "t-opened",
+       "tasks": [
+        {
+         "t": "Old coop floor opened up",
+         "f": "home",
+         "trade": "prep"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-07",
+       "time": "16:23",
+       "title": "New timber floor",
+       "note": "New timber boards in place.",
+       "img": "t-after",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "New timber floor laid",
+         "f": "home",
+         "trade": "carpentry"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "fish-relocation",
+     "title": "Pond fish relocation",
+     "foundation": "outdoor",
+     "category": "Animal relocation",
+     "icon": "net",
+     "start": "2026-10-18",
+     "end": "2026-10-18",
+     "status": "complete",
+     "statusLabel": "Complete · Oct 18",
+     "summary": "An invasive fish is caught out of the backyard pond with a homemade net and carried to a lake. The catch was slow, tedious work.",
+     "focus": "55% 50%",
+     "metrics": {
+      "daysOnSite": 1,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "On camera",
+       "value": "5:26–6:34 PM"
+      },
+      {
+       "label": "Clips logged",
+       "value": "9"
+      },
+      {
+       "label": "Equipment seen",
+       "value": "Homemade net, bucket"
+      },
+      {
+       "label": "Species",
+       "value": "Not identified"
+      }
+     ],
+     "objectives": [
+      "Build a net",
+      "Catch the fish",
+      "Move it to a lake"
+     ],
+     "open": [
+      "Species not identified",
+      "Release site kept private"
+     ],
+     "timeline": [
+      {
+       "date": "2026-10-18",
+       "time": "17:26",
+       "title": "Building the net",
+       "note": "A homemade net is put together at the pond.",
+       "img": "t-net",
+       "tasks": [
+        {
+         "t": "Homemade net built",
+         "f": "outdoor",
+         "trade": "wildlife"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-18",
+       "time": "17:35",
+       "title": "Finding the fish",
+       "note": "Searching the pond.",
+       "img": "t-find",
+       "tasks": [
+        {
+         "t": "Pond searched for the fish",
+         "f": "outdoor",
+         "trade": "wildlife"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-18",
+       "time": "17:45",
+       "title": "Caught",
+       "note": "The fish comes up in the net.",
+       "img": "t-caught",
+       "tasks": [
+        {
+         "t": "Fish caught in the net",
+         "f": "outdoor",
+         "trade": "wildlife"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-18",
+       "time": "17:46",
+       "title": "Into the bucket",
+       "note": "Moved to a bucket for the trip.",
+       "img": "t-bucket",
+       "tasks": [
+        {
+         "t": "Fish moved to a bucket",
+         "f": "outdoor",
+         "trade": "wildlife"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-18",
+       "time": "18:34",
+       "title": "At the lake",
+       "note": "Carried to a lake for release.",
+       "img": "t-lake",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "Fish carried to a lake",
+         "f": "outdoor",
+         "trade": "wildlife"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "pond-cover",
+     "title": "Pond mesh cover",
+     "foundation": "outdoor",
+     "category": "Outdoor build",
+     "icon": "mesh",
+     "start": "2026-10-18",
+     "end": "2026-10-18",
+     "status": "complete",
+     "statusLabel": "Complete · Oct 18",
+     "summary": "A wire-mesh cover is traced, cut and fitted to a circular stock-tank pond.",
+     "focus": "55% 45%",
+     "metrics": {
+      "daysOnSite": 1,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "On camera",
+       "value": "2:01–4:27 PM"
+      },
+      {
+       "label": "Clips logged",
+       "value": "5"
+      },
+      {
+       "label": "Equipment seen",
+       "value": "Tape measure, string, mesh"
+      }
+     ],
+     "objectives": [
+      "Cut the mesh",
+      "Shape the cover",
+      "Fit the cover"
+     ],
+     "open": [
+      "Cover materials and fastening method not confirmed"
+     ],
+     "timeline": [
+      {
+       "date": "2026-10-18",
+       "time": "14:01",
+       "title": "The pond",
+       "note": "The circular stock-tank pond.",
+       "img": "t-pond"
+      },
+      {
+       "date": "2026-10-18",
+       "time": "15:25",
+       "title": "Tracing the circle",
+       "note": "A string and tape measure mark out the circle.",
+       "img": "t-trace",
+       "tasks": [
+        {
+         "t": "Cover circle traced",
+         "f": "outdoor",
+         "trade": "outdoor"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-18",
+       "time": "15:58",
+       "title": "Cutting the mesh",
+       "note": "The wire mesh is cut to shape.",
+       "img": "t-cut",
+       "tasks": [
+        {
+         "t": "Wire mesh cut to shape",
+         "f": "outdoor",
+         "trade": "outdoor"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-18",
+       "time": "16:24",
+       "title": "Fitting the cover",
+       "note": "The cover goes onto the tank.",
+       "img": "t-fit",
+       "tasks": [
+        {
+         "t": "Cover fitted to the tank",
+         "f": "outdoor",
+         "trade": "outdoor"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-18",
+       "time": "16:27",
+       "title": "Cover on",
+       "note": "The cover sits on the pond.",
+       "img": "t-on",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "Pond cover in place",
+         "f": "outdoor",
+         "trade": "outdoor"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "roof-drain",
+     "title": "Roof drain line",
+     "foundation": "home",
+     "category": "Plumbing",
+     "icon": "snake",
+     "start": "2026-10-15",
+     "end": "2026-10-15",
+     "status": "complete",
+     "statusLabel": "Complete · Oct 15",
+     "summary": "The toilet line is snaked from the roof so the toilet can flush again, then the drain is checked.",
+     "focus": "36% 30%",
+     "metrics": {
+      "daysOnSite": 1,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "On camera",
+       "value": "9:01–9:18 AM"
+      },
+      {
+       "label": "Clips logged",
+       "value": "8"
+      },
+      {
+       "label": "Equipment seen",
+       "value": "Drain snake, cordless drill"
+      }
+     ],
+     "objectives": [
+      "Get to the line",
+      "Clear the line",
+      "Check the drain"
+     ],
+     "open": [
+      "Which pipe was accessed is not specified"
+     ],
+     "timeline": [
+      {
+       "date": "2026-10-15",
+       "time": "09:06",
+       "title": "Snake and drill ready",
+       "note": "The drain snake and drill come off the truck.",
+       "img": "t-ready",
+       "tasks": [
+        {
+         "t": "Drain snake and drill prepped",
+         "f": "home",
+         "trade": "plumbing"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-15",
+       "time": "09:08",
+       "title": "Clearing from the roof",
+       "note": "The snake runs down the line from the roof.",
+       "img": "t-roof",
+       "tasks": [
+        {
+         "t": "Line snaked from the roof",
+         "f": "home",
+         "trade": "plumbing"
+        }
+       ]
+      },
+      {
+       "date": "2026-10-15",
+       "time": "09:12",
+       "title": "Checking the drain",
+       "note": "Water drains at the sink.",
+       "img": "t-check",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "Drain checked",
+         "f": "home",
+         "trade": "plumbing"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "garden",
+     "title": "Garden bed clearing",
+     "foundation": "outdoor",
+     "category": "Yard work",
+     "icon": "rake",
+     "start": "2026-09-28",
+     "end": "2026-09-28",
+     "status": "complete",
+     "statusLabel": "Complete · Sep 28",
+     "summary": "Grass and weeds are pulled and raked out to open up space for a garden.",
+     "focus": "60% 45%",
+     "metrics": {
+      "daysOnSite": 1,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "On camera",
+       "value": "5:40–7:17 PM"
+      },
+      {
+       "label": "Clips logged",
+       "value": "7"
+      },
+      {
+       "label": "Equipment seen",
+       "value": "Rake, garden fork"
+      }
+     ],
+     "objectives": [
+      "Show the area",
+      "Remove the weeds",
+      "Reveal the cleared space"
+     ],
+     "open": [
+      "Area size not recorded"
+     ],
+     "timeline": [
+      {
+       "date": "2026-09-28",
+       "time": "17:40",
+       "title": "The area",
+       "note": "The overgrown patch before clearing.",
+       "img": "t-area"
+      },
+      {
+       "date": "2026-09-28",
+       "time": "17:41",
+       "title": "Pulling weeds",
+       "note": "Grass and weeds come out by hand.",
+       "img": "t-weeds",
+       "tasks": [
+        {
+         "t": "Grass and weeds pulled",
+         "f": "outdoor",
+         "trade": "outdoor"
+        }
+       ]
+      },
+      {
+       "date": "2026-09-28",
+       "time": "18:53",
+       "title": "Cleared ground",
+       "note": "Bare ground ready for the garden.",
+       "img": "t-cleared",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "Ground raked clear",
+         "f": "outdoor",
+         "trade": "outdoor"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "roof-coating",
+     "title": "Silicone roof coating",
+     "foundation": "home",
+     "category": "Roofing",
+     "icon": "roof",
+     "start": null,
+     "end": null,
+     "status": "reported",
+     "statusLabel": "Complete · owner reported",
+     "summary": "Silicone coating applied to a leaking roof. No footage was taken, so this entry comes from the owner’s account.",
+     "focus": "60% 50%",
+     "art": "assets/hub/roof-coating/art.svg",
+     "metrics": {
+      "daysOnSite": null,
+      "hours": null,
+      "miles": null,
+      "note": "No date recorded"
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "Footage",
+       "value": "None"
+      }
+     ],
+     "objectives": [
+      "Find the leak",
+      "Apply the coating"
+     ],
+     "open": [
+      "No footage or date recorded",
+      "Roof area and coating product not recorded"
+     ],
+     "timeline": [
+      {
+       "title": "Owner’s account",
+       "note": "Coating applied to the leaking roof. No footage or date recorded.",
+       "milestone": true,
+       "tasks": [
+        {
+         "t": "Silicone coating applied to the roof",
+         "f": "home",
+         "trade": "roofing"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "archived": true,
+   "archivedOn": "2026-11-20"
+  },
+  {
+   "id": "apartments",
+   "name": "Apartment building walkthrough",
+   "rank": 3,
+   "type": "Residential · design",
+   "summary": "A scroll-driven 3D walkthrough of a proposed two-storey building with eight apartments, modelled from the architect’s floor plans.",
+   "keyJob": "building-walkthrough",
+   "ledger": {
+    "agreed": null,
+    "changes": [],
+    "payments": []
+   },
+   "jobs": [
+    {
+     "id": "building-walkthrough",
+     "title": "Apartment building walkthrough",
+     "foundation": "planning",
+     "category": "Design visualization",
+     "icon": "cube",
+     "start": "2026-11-09",
+     "end": null,
+     "status": "active",
+     "statusLabel": "In progress",
+     "summary": "A scroll-driven 3D walkthrough of a proposed two-storey building with eight apartments, modelled from the architect’s floor plans. Floors come apart one at a time and the furniture can be switched off.",
+     "focus": "50% 52%",
+     "metrics": {
+      "daysOnSite": null,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "Apartments",
+       "value": "8"
+      },
+      {
+       "label": "Floors modelled",
+       "value": "2"
+      },
+      {
+       "label": "Footprint",
+       "value": "≈ 119 × 58 ft"
+      },
+      {
+       "label": "Wall thickness",
+       "value": "6″"
+      },
+      {
+       "label": "Ceiling height",
+       "value": "2.75 m",
+       "note": "Assumed"
+      }
+     ],
+     "open": [
+      "Lower ground floor not modelled (only a sketch exists)",
+      "Exterior colours and cladding not modelled",
+      "Ceiling height, sills and parapet are assumed"
+     ],
+     "timeline": [
+      {
+       "date": "2026-11-09",
+       "title": "Floor plans in",
+       "note": "Ground-floor and first-floor plan drawings received.",
+       "tasks": [
+        {
+         "t": "Floor plans received",
+         "f": "planning",
+         "trade": "design"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-12",
+       "title": "Model built from the plans",
+       "note": "Walls, doors, windows, counters and fixtures traced from the drawings: eight apartments on two floors.",
+       "img": "t-ground",
+       "tasks": [
+        {
+         "t": "3D model built from the plans",
+         "f": "planning",
+         "trade": "design"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-12",
+       "title": "First floor, roof off",
+       "note": "Each apartment can be opened up and furnished or cleared.",
+       "img": "t-first",
+       "tasks": [
+        {
+         "t": "Apartments set up furnished or empty",
+         "f": "planning",
+         "trade": "design"
+        }
+       ]
+      },
+      {
+       "date": "2026-11-12",
+       "title": "Walkthrough page",
+       "note": "Scroll takes the building apart floor by floor, or switch to free orbit.",
+       "img": "t-exterior",
+       "tasks": [
+        {
+         "t": "Scroll walkthrough page built",
+         "f": "planning",
+         "trade": "design"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "archived": true,
+   "archivedOn": "2026-11-20"
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen build-out",
+   "rank": 4,
+   "type": "Residential",
+   "summary": "A new enclosed kitchen framed inside an existing kitchen and dining space: two new walls, a soft-close pocket door, and a cabinet, stove and sink run along the plumbing wall.",
+   "keyJob": "kitchen-build",
+   "ledger": {
+    "agreed": null,
+    "changes": [],
+    "payments": []
+   },
+   "jobs": [
+    {
+     "id": "kitchen-build",
+     "title": "Kitchen build-out",
+     "foundation": "home",
+     "category": "Interior framing",
+     "icon": "plan",
+     "start": "2026-07-28",
+     "end": null,
+     "status": "planning",
+     "statusLabel": "Layout drafted",
+     "summary": "A new enclosed kitchen framed inside the existing kitchen and dining space: two existing walls, two new ones, a soft-close pocket door, and a cabinet, stove and sink run along the plumbing wall.",
+     "focus": "64% 50%",
+     "art": "assets/hub/kitchen-build/art.svg",
+     "metrics": {
+      "daysOnSite": null,
+      "hours": null,
+      "miles": null
+     },
+     "costs": {
+      "agreed": null,
+      "labor": null,
+      "materials": [],
+      "unpriced": [],
+      "stops": []
+     },
+     "facts": [
+      {
+       "label": "Footprint",
+       "value": "10 × 7 ft",
+       "note": "120″ × 84″"
+      },
+      {
+       "label": "Walls",
+       "value": "2 existing · 2 new"
+      },
+      {
+       "label": "Pocket door opening",
+       "value": "60″"
+      },
+      {
+       "label": "Plumbing-wall run",
+       "value": "84″",
+       "note": "30 + 24 + 30"
+      },
+      {
+       "label": "Fridge space",
+       "value": "36″ × 30″",
+       "note": "Default, adjustable"
+      },
+      {
+       "label": "Pocket door kit",
+       "value": "TSQAL05-5FT"
+      }
+     ],
+     "open": [
+      "Cabinet configuration (upper vs. lower, door swing)",
+      "Stove dimensions (24″ × 24″ is a placeholder)",
+      "Fixtures for the old-counter wall",
+      "Passage behind the new fridge wall",
+      "Framing details for the two new walls"
+     ],
+     "timeline": [
+      {
+       "date": "2026-07-28",
+       "title": "Layout plan drafted",
+       "note": "All four walls measured from the shared corner of the pocket-door and plumbing walls. A scale plan and a 3D model are drawn from it.",
+       "tasks": [
+        {
+         "t": "Kitchen layout measured and drawn",
+         "f": "planning",
+         "trade": "design"
+        }
+       ]
+      },
+      {
+       "date": "2026-07-28",
+       "title": "Mirror correction",
+       "note": "The plumbing wall and fridge corner are swapped side to side to match the real wall.",
+       "tasks": [
+        {
+         "t": "Plan mirrored to match the plumbing wall",
+         "f": "planning",
+         "trade": "design"
+        }
+       ]
+      },
+      {
+       "title": "Frame the two new walls",
+       "note": "Stud layout and headers still to be finalized.",
+       "upcoming": true,
+       "tasks": [
+        {
+         "t": "Frame the two new walls",
+         "f": "home",
+         "upcoming": true,
+         "trade": "carpentry"
+        }
+       ]
+      },
+      {
+       "title": "Fit the pocket door",
+       "note": "Rough opening, header and rail standoff per the kit manual.",
+       "upcoming": true,
+       "tasks": [
+        {
+         "t": "Fit the pocket door",
+         "f": "home",
+         "upcoming": true,
+         "trade": "carpentry"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "archived": true,
+   "archivedOn": "2026-11-20"
+  }
+ ],
+ "trades": {
+  "prep": "Prep",
+  "carpentry": "Carpentry",
+  "electrical": "Electrical",
+  "plumbing": "Plumbing",
+  "roofing": "Roofing",
+  "finish": "Finish",
+  "outdoor": "Yard & pond",
+  "wildlife": "Wildlife",
+  "design": "Design",
+  "supply": "Supply"
+ }
+}

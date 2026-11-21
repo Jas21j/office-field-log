@@ -1,3 +1,48 @@
+# Salesman Solutions · Project Hub
+
+Buildless site in `dist/`. `index.html` is the **Project Hub**, told as five chapters after a one-line premise ("Every job, on the record", shown once per visit):
+
+1. **Projects:** a row of project tiles. The focused project fills the screen with its key art, its numbers (only what is recorded, plus one line naming what is not) and a row of its jobs.
+2. **The work:** that project's jobs on a timeline, its ledger, its record counts, what is planned next and what is not confirmed yet.
+3. **Schedule:** every job on one calendar. Columns for days, hours, miles and materials appear only once some job has that number.
+4. **Record:** everything completed, under four foundations (Home, Outdoor, Supply runs, Planning & design), grouped by job. Supply runs read straight from the receipts.
+5. **Premise:** why the hub keeps the record.
+
+Every job opens a sheet (photos, numbers, tasks, costs). The look follows Apple's Liquid Glass: blurred, saturated glass panels over each project's environment, spring-timed motion without overshoot, selection pills that slide, and a floating tab bar on phones. `office.html` is the office build's scroll story.
+
+Run `python3 -m http.server 4173 --directory dist` and open `http://localhost:4173`. `#/<project-id>` focuses a project, `#/<project-id>/ledger` opens its ledger. Arrow keys move along the project row, Enter opens the project, and ⌘K (or `/`) searches projects, jobs, tasks and foundations.
+
+## Project data: `dist/data/projects.json`
+
+Projects → jobs → timeline entries → tasks.
+
+- **Project:** `id`, `name` (e.g. "Project Juniper"), `rank` (order on the row), `type`, `city` (city level only, never an address or client name), `statusLabel` (optional; status is otherwise worked out from the jobs), `summary`, `keyJob` (whose art leads), `links`, `ledger`, `jobs`.
+- **Project `ledger`** (the part a passcode can lock later): `agreed`, `changes` (`{date, job, title, reason, amount, status: "approved" | "proposed", evidence}`), `payments` (`{date, amount, note}`).
+- **Job:** `id` (also its image folder, `assets/hub/<id>/`), `title`, `foundation`, `category`, `icon`, `start` / `end` (ISO; `end: null` = ongoing, `start: null` = undated), `status` (`active`, `planning`, `complete`, `reported`), `statusLabel`, `summary`, `focus`, `facts`, `objectives`, `open`, `timeline`, and the practical numbers:
+  - `metrics`: `daysOnSite`, `hours`, `miles` (and an optional `note`).
+  - `costs`: `agreed` (if the job is priced on its own), `labor`, `materials` (`{date, vendor, city, item, amount, basis}`), `unpriced`, `stops`, `materialsThrough`.
+- **Timeline entry:** `{date, time "HH:MM", title, note, img: "t-<key>", tag, milestone, upcoming, tasks: [{t, f}]}`. Each task is filed under a foundation `f`.
+- **`foundations`** (top of the file): the four groups the record is organised by (`home`, `outdoor`, `supply`, `planning`), each with a name and a one-line description. Every purchase and stop in a job's `costs` shows up under Supply runs on its own.
+- **`trades`**: the finer label a task keeps (`carpentry` → "Carpentry"), shown small beside it. A task is `{t, f, trade}`.
+
+### Using it for another kind of business
+
+Nothing in the page is specific to building work. Rename or replace the `foundations` and `trades` in `projects.json` (for example Design, Build, Launch and Purchasing) and the record, the job sheets and search follow. Projects, jobs, statuses, dates, days, hours, miles, costs and the ledger work the same in any industry.
+
+`null` means not recorded: it shows as such, is never guessed, and roll-ups say how many jobs have recorded each number ("6 of 10 jobs recorded"). Balance due = agreed price + approved changes − payments (`balanceOf` in `dist/ledger.js`). Purchases and changes also appear on the update for their date. Bump the `?v=` query in `ledger.js` and the HTML after changing data.
+
+## Images
+
+`tools/hub_media.json` holds one crop recipe per picture. `python3 tools/pack_hub.py --review <dir>` writes `dist/assets/hub/<job-id>/{tile,hero-L,hero-P,t-*}.webp` and `manifest.json` (each job's accent colour), plus full-size review copies in `<dir>`. Video is read as pictures only (`ffmpeg -an`) and `IMG_7505` is refused. Crops avoid faces, house fronts, papers and screens, and the lake skyline: check the review copies at full size before publishing. `python3 tools/hub_art.py` draws the kitchen plan (to scale) and the roof-coating illustration, the two jobs without usable photos. A project with several jobs gets a four-photo tile and its backdrop cycles through its jobs.
+
+## Passcode lock (planned, not built)
+
+Each project's `ledger` (and later its jobs' costs) is kept apart from the public layer so it can be encrypted with that project's passcode (key derived in the browser, AES-GCM), leaving only scrambled data in the public repo. Until then everything in `projects.json` is public.
+
+## Publishing
+
+The repo is public and every push to `main` redeploys GitHub Pages. Run the privacy check (no addresses, client names, faces or house exteriors) before each push.
+
 # Field Log 02 · Building a home office
 
 Buildless project site. From this directory, run `python3 -m http.server 4173 --directory dist` and open `http://localhost:4173`.
@@ -19,3 +64,15 @@ All renders come from the films' twin and look: `motion/3d/office_twin/Office-Tw
 `python3 office-field-log/tools/pack_photos.py footage/` turns the crew's 12 MP stills (IMG_7184, 7191, 7216, from Oct 28–29) into `dist/assets/photo-*.webp` at two widths. The window glass is softened to plain daylight so the neighbour's roof beyond the hedge never shows.
 
 The materials drawer uses the room log and production notes for supplier amounts (documented tally through Nov 9).
+
+## The invoice (Project Juniper)
+
+Chapter 03 tells the open invoice one day at a time. It lives in `dist/data/projects.json` under `projects[].invoice`:
+
+- `rates`: `{ "day": 150, "gas": 35 }`. Each day sets `dayRate` (true or false) and `gas`: `true` charges the usual $35, a number charges that amount (Nov 8 is $10), and `false` charges nothing.
+- `days[]`: date, job codes (`A` office build, `B` floor and paint), a short title, and `stops[]` with the time, place, what happened, any receipt amount, the receipt images (`receipt` thumb, `receiptFull`), and `mi`, the estimated miles from the previous stop. `confirm[]` holds open questions, which also gather at the end of the statement.
+- Days that were paid on the spot stay out of the invoice. Juniper C is kept as a job only.
+- `materialsBilled: true` adds each day's purchases to that day's charge and to the balance.
+- `lastPayment` opens the statement period.
+
+The math is in `invoiceOf()`, `chargesFor()` and `gasGroups()` in `dist/ledger.js`. Miles are estimates: the straight-line distance between stop towns × 1.3. They come from a script kept outside this public repo, because it holds town-level points for home and the client sites. Receipts are published only after redaction, with customer names, card digits and staff names blacked out. Sinclair, the apartment walkthrough and the kitchen are archived (`"archived": true`). They stay in the file but no longer appear in the hub.

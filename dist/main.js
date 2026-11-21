@@ -1,3 +1,5 @@
+import { loadHub, renderLedger, wireDrawer } from './ledger.js';
+
 const chapters = [...document.querySelectorAll('.chapter')];
 const chapterLinks = [...document.querySelectorAll('.chapter-nav a')];
 const copy = chapters.map(chapter => chapter.querySelector('.chapter-copy'));
@@ -338,22 +340,16 @@ new IntersectionObserver(([entry]) => {
   setOrbit();
 }, { threshold: .22 }).observe(hero);
 
-// ------------------------------------------------------------ materials drawer
+// ------------------------------------------------------------ ledger drawer (figures from data/projects.json, shared with the Project Hub)
 const ledger = document.querySelector('#materials');
 const ledgerToggle = document.querySelector('#ledger-toggle');
-function openLedger() {
-  if (ledger.open) return;
-  ledgerToggle.setAttribute('aria-expanded', 'true');
-  ledger.showModal();
-}
-ledgerToggle.addEventListener('click', openLedger);
-if (location.hash === '#materials') openLedger();
-ledger.addEventListener('click', event => {
-  if (event.target !== ledger) return;
-  const bounds = ledger.getBoundingClientRect();
-  if (event.clientX < bounds.left || event.clientX > bounds.right) ledger.close();
-});
-ledger.addEventListener('close', () => {
-  ledgerToggle.setAttribute('aria-expanded', 'false');
-  ledgerToggle.focus({ preventScroll: true });
+const invoiceRoot = document.querySelector('#invoice');
+const openLedger = wireDrawer(ledger, ledgerToggle);
+ledgerToggle.addEventListener('click', () => openLedger());
+if (['#materials', '#invoice', '#ledger'].includes(location.hash)) openLedger();
+loadHub().then(hub => {
+  const project = hub.projects.find(p => p.jobs.some(j => j.id === invoiceRoot.dataset.job));
+  if (project) renderLedger(project, invoiceRoot, { jobId: invoiceRoot.dataset.job });
+}).catch(() => {
+  invoiceRoot.querySelector('.ledger-note').textContent = 'The ledger could not load. Refresh to try again.';
 });
